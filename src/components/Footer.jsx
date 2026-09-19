@@ -31,7 +31,7 @@ export default function Footer() {
               <li><a href="#quote" onClick={(e) => { e.preventDefault(); scrollTo('quote'); }}>Request Quote</a></li>
               <li>
                 <a 
-                  href="/assets/images/photo.pdf" 
+                  href="/assets/Global_View_Exports_Product_Catalogue_2026.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   download="Global_View_Exports_Product_Catalogue_2026.pdf"

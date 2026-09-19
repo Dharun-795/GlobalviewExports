@@ -108,7 +108,7 @@ export default function Hero() {
             </a>
 
             <a 
-              href="/assets/images/photo.pdf" 
+              href="/assets/Global_View_Exports_Product_Catalogue_2026.pdf" 
               target="_blank"
               rel="noopener noreferrer"
               download="Global_View_Exports_Product_Catalogue_2026.pdf" 
