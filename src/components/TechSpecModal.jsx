@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyImage from './LazyImage';
 
 export default function TechSpecModal({ product, onClose }) {
   if (!product) return null;
@@ -37,11 +38,12 @@ export default function TechSpecModal({ product, onClose }) {
         </div>
 
         <div className="modal-body">
-          <div style={{ textAlign: 'center', marginBottom: '1.25rem' }}>
-            <img 
+          <div style={{ textAlign: 'center', marginBottom: '1.25rem', display: 'flex', justifyContent: 'center' }}>
+            <LazyImage 
               src={`/${product.image}`} 
               alt={product.title} 
-              style={{ maxHeight: '180px', margin: '0 auto', objectFit: 'contain' }}
+              style={{ maxHeight: '180px', width: '100%', maxWidth: '280px', margin: '0 auto' }}
+              objectFit="contain"
             />
           </div>
 

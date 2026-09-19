@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyImage from './LazyImage';
 
 const processSteps = [
   {
@@ -64,7 +65,11 @@ export default function Process() {
         <div className="gallery-grid">
           {galleryItems.map((item, idx) => (
             <div className="gallery-card" key={idx}>
-              <img src={`/assets/images/${item.img}`} alt={item.label} />
+              <LazyImage 
+                src={`/assets/images/${item.img}`} 
+                alt={item.label} 
+                objectFit="cover"
+              />
               <span>{item.label}</span>
             </div>
           ))}

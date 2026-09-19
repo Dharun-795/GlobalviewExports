@@ -30,8 +30,18 @@ const heroSlides = [
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [loadedSlides, setLoadedSlides] = useState({});
 
   useEffect(() => {
+    // Preload hero images for seamless smooth switching
+    heroSlides.forEach((slide, idx) => {
+      const img = new Image();
+      img.src = slide.image;
+      img.onload = () => {
+        setLoadedSlides(prev => ({ ...prev, [idx]: true }));
+      };
+    });
+
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 5500);
@@ -51,7 +61,7 @@ export default function Hero() {
         {heroSlides.map((slide, index) => (
           <div
             key={index}
-            className={`hero-bg-slide ${index === currentSlide ? 'active' : ''}`}
+            className={`hero-bg-slide ${index === currentSlide ? 'active' : ''} ${loadedSlides[index] ? 'is-ready' : 'is-buffering'}`}
             style={{ backgroundImage: `url("${slide.image}")` }}
             role="img"
             aria-label={slide.alt}

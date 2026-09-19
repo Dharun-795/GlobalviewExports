@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyImage from './LazyImage';
 
 export default function About() {
   return (
@@ -6,7 +7,11 @@ export default function About() {
       <div className="container">
         <div className="about-grid">
           <div className="about-img-box">
-            <img src="/assets/images/IMG20240614113701.jpg" alt="Global View Exports Facility" />
+            <LazyImage 
+              src="/assets/images/IMG20240614113701.jpg" 
+              alt="Global View Exports Facility" 
+              objectFit="cover"
+            />
           </div>
 
           <div className="about-content">

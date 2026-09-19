@@ -1637,3 +1637,157 @@ textarea.form-control {
     padding: 1rem;
   }
 }
+
+/* ==========================================================================
+   IMAGE BUFFER & SKELETON SHIMMER SYSTEM
+   ========================================================================== */
+
+.img-buffer-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #f0f4f1;
+}
+
+.img-skeleton-buffer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f2f6f3 0%, #e5ede7 50%, #f2f6f3 100%);
+  z-index: 2;
+  overflow: hidden;
+  transition: opacity 0.4s ease;
+}
+
+.img-buffer-wrapper.is-loaded .img-skeleton-buffer {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.img-buffer-shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: imgBufferShimmer 1.8s infinite ease-in-out;
+  transform: translateX(-100%);
+}
+
+@keyframes imgBufferShimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.img-buffer-spinner {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.buffer-pulse-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2.5px solid rgba(25, 82, 40, 0.15);
+  border-top-color: var(--primary);
+  border-right-color: var(--accent);
+  animation: bufferSpin 0.9s linear infinite;
+}
+
+.buffer-icon {
+  font-size: 0.95rem;
+  color: var(--primary);
+  animation: bufferPulse 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes bufferSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes bufferPulse {
+  0% {
+    transform: scale(0.85);
+    color: var(--primary);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.15);
+    color: var(--accent);
+    opacity: 1;
+  }
+}
+
+/* Image Transitions */
+.buffered-img {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1), 
+              filter 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.4s ease;
+}
+
+.buffered-img.loading {
+  opacity: 0;
+  filter: blur(8px);
+  transform: scale(0.98);
+}
+
+.buffered-img.loaded {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+}
+
+.img-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #f7faf8;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  z-index: 2;
+}
+
+.img-fallback i {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+/* Card hover animation with buffered images */
+.product-card:hover .buffered-img.loaded {
+  transform: scale(1.05);
+}
+
+.gallery-card:hover .buffered-img.loaded {
+  transform: scale(1.08);
+}
+
+.about-img-box .img-buffer-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  min-height: 340px;
+}
+

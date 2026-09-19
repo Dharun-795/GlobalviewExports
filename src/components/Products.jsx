@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { productsData } from '../data/products';
+import LazyImage from './LazyImage';
 
 const filterCategories = [
   { id: 'all', label: 'All Products' },
@@ -51,7 +52,11 @@ export default function Products({ onOpenSpecModal }) {
           {filteredProducts.map(product => (
             <div className="product-card" key={product.id}>
               <div className="product-img">
-                <img src={`/${product.image}`} alt={product.title} />
+                <LazyImage 
+                  src={`/${product.image}`} 
+                  alt={product.title} 
+                  objectFit="contain"
+                />
               </div>
               <div className="product-body">
                 <h3>{product.title}</h3>
