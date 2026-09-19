@@ -53,7 +53,7 @@ export default function Footer() {
             </p>
             <p style={{ fontSize: '0.88rem', color: '#cfdcd2' }}>
               <strong>Direct:</strong> <a href="tel:+919842783222" style={{ color: '#cfdcd2' }}>+91 98427 83222</a> / <a href="tel:+919942533825" style={{ color: '#cfdcd2' }}>+91 99425 33825</a><br />
-              <strong>Email:</strong> enquiry@globalviewexports.com
+              <strong>Email:</strong> info@globalviewexports.com
             </p>
           </div>
         </div>

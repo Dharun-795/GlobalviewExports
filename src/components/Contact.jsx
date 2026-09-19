@@ -73,7 +73,7 @@ export default function Contact() {
           <div className="contact-card">
             <h4>Email Correspondence</h4>
             <p>
-              <a href="mailto:enquiry@globalviewexports.com">enquiry@globalviewexports.com</a>
+              <a href="mailto:info@globalviewexports.com">info@globalviewexports.com</a>
             </p>
             <p style={{ marginTop: '0.4rem', fontSize: '0.84rem' }}>24-hour response on international trade inquiries</p>
           </div>
