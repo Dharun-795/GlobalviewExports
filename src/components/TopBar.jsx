@@ -11,7 +11,7 @@ export default function TopBar() {
           </div>
           <div className="top-bar-item">
             <i className="fas fa-envelope"></i>
-            <a href="mailto:info@globalviewexports.com">info@globalviewexports.com</a>
+            <a href="mailto:enquiry@globalviewexports.com">enquiry@globalviewexports.com</a>
           </div>
           <div className="top-bar-item">
             <i className="fas fa-phone-alt"></i>

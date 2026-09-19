@@ -29,7 +29,7 @@ export default function QuoteSection() {
       _subject: `Export Inquiry: ${formData.inquiryProduct} - ${formData.buyerCompany}`,
       _template: 'table',
       _replyto: formData.buyerEmail,
-      _cc: 'enquiry@globalviewexports.in,info@globalviewexports.com',
+      _cc: 'enquiry@globalviewexports.in',
       'Buyer Name': formData.buyerName,
       'Company Name': formData.buyerCompany,
       'Email Address': formData.buyerEmail,
@@ -403,7 +403,7 @@ Message: ${formData.buyerMessage}`);
                 <i className="fas fa-phone-alt"></i> 
                 <a href="tel:+919842783222">+91 98427 83222</a>, <a href="tel:+919942533825">+91 99425 33825</a>
               </p>
-              <p><i className="fas fa-envelope"></i> <a href="mailto:info@globalviewexports.com">info@globalviewexports.com</a></p>
+              <p><i className="fas fa-envelope"></i> <a href="mailto:enquiry@globalviewexports.com">enquiry@globalviewexports.com</a></p>
             </div>
           </div>
         </div>
