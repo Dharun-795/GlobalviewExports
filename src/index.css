@@ -997,49 +997,82 @@ img {
   margin: 0;
 }
 
-/* Status Alert */
-.status-success-box {
-  background: rgba(37, 211, 102, 0.15);
-  border: 1px solid #25d366;
+/* Status Alert - Refined & Elegant */
+.status-success-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 4px solid var(--accent-gold);
   border-radius: 8px;
-  padding: 1.25rem;
-  margin-bottom: 1.75rem;
-  color: #ffffff;
+  padding: 1.35rem 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.status-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(229, 179, 88, 0.15);
+  border: 1px solid rgba(229, 179, 88, 0.4);
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.status-content-wrap {
+  flex: 1;
 }
 
 .status-title {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.35rem;
-  color: #25d366;
+  color: #ffffff;
+  font-size: 1.05rem;
   font-weight: 700;
-  font-size: 1rem;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
 }
 
 .status-desc {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #e2f4e8;
-  line-height: 1.5;
+  margin: 0 0 0.85rem 0;
+  font-size: 0.92rem;
+  color: #d1dfd5;
+  line-height: 1.55;
 }
 
 .btn-status-reset {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   color: #ffffff;
-  padding: 0.45rem 1rem;
+  padding: 0.5rem 1.15rem;
   border-radius: 4px;
   font-size: 0.82rem;
   font-weight: 600;
-  margin-top: 0.85rem;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   transition: all 0.2s ease;
 }
 
 .btn-status-reset:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+}
+
+.status-success-card.status-activation {
+  border-left-color: #e5b358;
+}
+
+.status-icon-wrap.activation-icon {
+  background: rgba(229, 179, 88, 0.2);
+  border-color: #e5b358;
+  color: #e5b358;
 }
 
 /* Form Styles */

@@ -127,24 +127,6 @@ Message: ${formData.buyerMessage}`);
     }
   };
 
-  const handleWhatsAppSubmit = () => {
-    const text = `*New Export Inquiry - Global View Exports*
-----------------------------------------
-*Buyer Name:* ${formData.buyerName || 'Prospective Buyer'}
-*Company:* ${formData.buyerCompany || 'N/A'}
-*Email:* ${formData.buyerEmail || 'N/A'}
-*Phone:* ${formData.buyerPhone || 'N/A'}
-*Product:* ${formData.inquiryProduct}
-*EC Grade:* ${formData.inquiryGrade}
-*Estimated Volume:* ${formData.inquiryQuantity}
-*Packaging:* ${formData.inquiryPackaging}
-*Destination Port:* ${formData.inquiryPort || 'Not specified'}
-*Notes:* ${formData.buyerMessage || 'None'}`;
-
-    const url = `https://wa.me/919842783222?text=${encodeURIComponent(text)}`;
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
-
   return (
     <section className="section-padding quote-section" id="quote">
       <div className="container">
@@ -156,40 +138,40 @@ Message: ${formData.buyerMessage}`);
             </div>
 
             {status.state === 'success' && (
-              <div className="status-success-box">
-                <div className="status-title">
-                  <i className="fas fa-check-circle"></i>
-                  <span>Inquiry Dispatched Successfully</span>
+              <div className="status-success-card">
+                <div className="status-icon-wrap">
+                  <i className="fas fa-check"></i>
                 </div>
-                <p className="status-desc">
-                  {status.message}
-                </p>
-                <button
-                  type="button"
-                  onClick={() => setStatus({ state: 'idle', message: '' })}
-                  className="btn-status-reset"
-                >
-                  Send Another Inquiry
-                </button>
+                <div className="status-content-wrap">
+                  <h4 className="status-title">Inquiry Dispatched Successfully</h4>
+                  <p className="status-desc">{status.message}</p>
+                  <button
+                    type="button"
+                    onClick={() => setStatus({ state: 'idle', message: '' })}
+                    className="btn-status-reset"
+                  >
+                    <i className="fas fa-redo-alt"></i> Send Another Inquiry
+                  </button>
+                </div>
               </div>
             )}
 
             {status.state === 'activation_needed' && (
-              <div className="status-success-box" style={{ borderColor: '#e5b358', background: 'rgba(229, 179, 88, 0.15)' }}>
-                <div className="status-title" style={{ color: '#e5b358' }}>
+              <div className="status-success-card status-activation">
+                <div className="status-icon-wrap activation-icon">
                   <i className="fas fa-envelope-open-text"></i>
-                  <span>Action Required: Activate Email Gateway</span>
                 </div>
-                <p className="status-desc" style={{ color: '#fff' }}>
-                  {status.message}
-                </p>
-                <button
-                  type="button"
-                  onClick={() => setStatus({ state: 'idle', message: '' })}
-                  className="btn-status-reset"
-                >
-                  Dismiss
-                </button>
+                <div className="status-content-wrap">
+                  <h4 className="status-title">Action Required: Activate Email Gateway</h4>
+                  <p className="status-desc">{status.message}</p>
+                  <button
+                    type="button"
+                    onClick={() => setStatus({ state: 'idle', message: '' })}
+                    className="btn-status-reset"
+                  >
+                    Dismiss
+                  </button>
+                </div>
               </div>
             )}
 
@@ -371,17 +353,9 @@ Message: ${formData.buyerMessage}`);
                       </>
                     ) : (
                       <>
-                        <i className="fas fa-paper-plane"></i> Submit Export Inquiry via Email
+                        <i className="fas fa-paper-plane"></i> Submit Export Inquiry
                       </>
                     )}
-                  </button>
-                  <button 
-                    type="button" 
-                    onClick={handleWhatsAppSubmit}
-                    className="btn btn-whatsapp" 
-                    style={{ width: '100%', marginTop: '0.65rem', padding: '0.85rem 1.5rem', fontWeight: 700 }}
-                  >
-                    <i className="fab fa-whatsapp"></i> Instant Inquiry via WhatsApp (+91 98427 83222)
                   </button>
                 </div>
               </div>
