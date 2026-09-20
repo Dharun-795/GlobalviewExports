@@ -1,44 +1,19 @@
 import React from 'react';
 import LazyImage from './LazyImage';
 
-const processSteps = [
-  {
-    num: '01',
-    title: 'Raw Material Selection',
-    desc: 'Matured coconut husks sourced from verified plantations in Pollachi, Kangeyam, and Pattukottai.'
-  },
-  {
-    num: '02',
-    title: 'Washing & Desalination',
-    desc: 'Substrates washed in freshwater lagoons to leach out sodium salts and reach Low EC standards.'
-  },
-  {
-    num: '03',
-    title: 'Natural Sun Drying',
-    desc: 'Spread on clean concrete drying yards until moisture is reduced strictly below 15%.'
-  },
-  {
-    num: '04',
-    title: 'Rotary Sieving & Screening',
-    desc: 'Rotary sieves remove fine micro-dust, heavy sand particles, and unwanted coarse fibers.'
-  },
-  {
-    num: '05',
-    title: '5:1 Compaction',
-    desc: 'High-tonnage hydraulic presses compress pith into uniform 5kg blocks, grow slabs, or briquettes.'
-  },
-  {
-    num: '06',
-    title: 'Palletizing & Loading',
-    desc: 'Heat-treated wooden pallets, stretch wrapped with corner guards, loaded into 40\' HC containers.'
-  }
+const processWorkflow = [
+  { step: '01', title: 'Source', desc: 'Matured coconut husks sourced across Tamil Nadu’s prime coir belt.' },
+  { step: '02', title: 'Process', desc: 'Screening, triple-washing, de-fibering, and natural sun drying below 15% moisture.' },
+  { step: '03', title: 'Inspect', desc: 'Material lab-checked for exact EC, pH, expansion yield, and fiber content.' },
+  { step: '04', title: 'Pack', desc: 'Hydraulically compressed 5:1 into blocks or grow bags, UV wrapped & palletized.' },
+  { step: '05', title: 'Export', desc: 'Containerized FCL shipments dispatched smoothly through southern Indian sea ports.' }
 ];
 
 const galleryItems = [
-  { img: 'IMG20240812164310.jpg', label: 'Raw Material Selection' },
-  { img: '20260801_143112.jpg', label: 'Husk and Coir Collection' },
-  { img: '20260801_143515.jpg', label: 'Brick Molding' },
-  { img: 'IMG20240830101256.jpg', label: 'Packing' }
+  { img: '20260801_143517.jpg', label: 'Defibring and screening line' },
+  { img: 'IMG20240830101256.jpg', label: 'Material labelled and checked to grade before packing' },
+  { img: 'IMG20240812165105.jpg', label: 'Screened coir pith drying in the yard before compression' },
+  { img: '20260801_143340.jpg', label: 'Packed and loaded for despatch' }
 ];
 
 export default function Process() {
@@ -46,23 +21,27 @@ export default function Process() {
     <section className="section-padding process-section" id="process">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Manufacturing & Quality Control</h2>
+          <div className="badge-pill">
+            <i className="fas fa-cogs"></i> QUALITY CONTROL
+          </div>
+          <h2 className="section-title">Quality from Source to Supply</h2>
           <p className="section-subtitle">
-            Standardized 6-stage manufacturing workflow from raw coconut husk processing to container dispatch.
+            Our approach is export-oriented from the first stage: consistent material, careful processing and handling, and packing suited to the buyer and the route.
           </p>
         </div>
 
-        <div className="process-grid">
-          {processSteps.map((step, idx) => (
-            <div className="process-card" key={idx}>
-              <span className="process-num">{step.num}</span>
-              <h4>{step.title}</h4>
-              <p>{step.desc}</p>
+        {/* 5-Stage Export Workflow Cards */}
+        <div className="process-flow-track">
+          {processWorkflow.map((item, idx) => (
+            <div className="process-flow-node" key={idx}>
+              <div className="node-badge">{item.step}</div>
+              <h4>{item.title}</h4>
+              <p>{item.desc}</p>
             </div>
           ))}
         </div>
 
-        <div className="gallery-grid">
+        <div className="gallery-grid" style={{ marginTop: '3rem' }}>
           {galleryItems.map((item, idx) => (
             <div className="gallery-card" key={idx}>
               <LazyImage 
@@ -78,3 +57,4 @@ export default function Process() {
     </section>
   );
 }
+
