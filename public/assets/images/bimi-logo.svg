@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" baseProfile="tiny-ps" width="512" height="512" viewBox="0 0 512 512">
+  <title>Global View Exports Official BIMI Logo</title>
+  <desc>BIMI compliant brand logo for Global View Exports</desc>
+  <!-- Background Circle for Mail Avatars -->
+  <circle cx="256" cy="256" r="256" fill="#195228" />
+  <!-- Inner Contrast Ring -->
+  <circle cx="256" cy="256" r="236" fill="#113e1d" stroke="#e5b358" stroke-width="4" />
+  <!-- Logo Emblem Graphics -->
+  <g transform="translate(106, 80) scale(0.6)">
+    <!-- 4-Leaf Clover / Flower Outline -->
+    <!-- Top Leaf -->
+    <path d="M250,50 C290,50 320,80 320,130 C320,180 280,210 250,230 C220,210 180,180 180,130 C180,80 210,50 250,50 Z" fill="#8bc34a" stroke="#ffffff" stroke-width="8"/>
+    <!-- Bottom Leaf -->
+    <path d="M250,410 C290,410 320,380 320,330 C320,280 280,250 250,230 C220,250 180,280 180,330 C180,380 210,410 250,410 Z" fill="#8bc34a" stroke="#ffffff" stroke-width="8"/>
+    <!-- Left Leaf -->
+    <path d="M70,230 C70,190 100,160 150,160 C200,160 230,200 250,230 C230,260 200,300 150,300 C100,300 70,270 70,230 Z" fill="#8bc34a" stroke="#ffffff" stroke-width="8"/>
+    <!-- Right Leaf -->
+    <path d="M430,230 C430,190 400,160 350,160 C300,160 270,200 250,230 C270,260 300,300 350,300 C400,300 430,270 430,230 Z" fill="#8bc34a" stroke="#ffffff" stroke-width="8"/>
+    
+    <!-- Diagonal Corner Petals -->
+    <path d="M120,100 C150,70 190,90 220,130 C200,170 160,190 130,170 C100,150 90,130 120,100 Z" fill="#689f38" stroke="#ffffff" stroke-width="6"/>
+    <path d="M380,100 C350,70 310,90 280,130 C300,170 340,190 370,170 C400,150 410,130 380,100 Z" fill="#689f38" stroke="#ffffff" stroke-width="6"/>
+    <path d="M120,360 C150,390 190,370 220,330 C200,290 160,270 130,290 C100,310 90,330 120,360 Z" fill="#689f38" stroke="#ffffff" stroke-width="6"/>
+    <path d="M380,360 C350,390 310,370 280,330 C300,290 340,270 370,290 C400,310 410,330 380,360 Z" fill="#689f38" stroke="#ffffff" stroke-width="6"/>
+
+    <!-- Center Globe Ring & Earth -->
+    <circle cx="250" cy="230" r="48" fill="#2e7d32" stroke="#ffffff" stroke-width="8" />
+    <circle cx="250" cy="230" r="38" fill="#4caf50" />
+    <circle cx="250" cy="230" r="28" fill="#81c784" />
+    <circle cx="250" cy="230" r="16" fill="#ffffff" />
+  </g>
+  <!-- Brand Text -->
+  <text x="256" y="375" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="3">GLOBAL VIEW</text>
+  <text x="256" y="410" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#e5b358" text-anchor="middle" letter-spacing="8">EXPORTS</text>
+</svg>
