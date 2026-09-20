@@ -108,14 +108,11 @@ export default function Hero() {
             </a>
 
             <a 
-              href="/assets/Global_View_Exports_Product_Catalogue_2026.pdf" 
-              target="_blank"
-              rel="noopener noreferrer"
-              download="Global_View_Exports_Product_Catalogue_2026.pdf" 
+              href="/assets/images/photo.pdf" 
+              download 
               className="hero-download-link"
-              title="Download Global View Exports 2026 Product Catalogue"
             >
-              <i className="fas fa-file-pdf"></i> Download Catalog (PDF)
+              <i className="fas fa-arrow-circle-down"></i> Download Catalog (PDF, 4.2 MB)
             </a>
           </div>
 

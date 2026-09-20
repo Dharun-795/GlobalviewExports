@@ -29,17 +29,6 @@ export default function Footer() {
               <li><a href="#specs" onClick={(e) => { e.preventDefault(); scrollTo('specs'); }}>Low vs High EC Guide</a></li>
               <li><a href="#process" onClick={(e) => { e.preventDefault(); scrollTo('process'); }}>Quality & Process</a></li>
               <li><a href="#quote" onClick={(e) => { e.preventDefault(); scrollTo('quote'); }}>Request Quote</a></li>
-              <li>
-                <a 
-                  href="/assets/Global_View_Exports_Product_Catalogue_2026.pdf" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  download="Global_View_Exports_Product_Catalogue_2026.pdf"
-                  style={{ color: '#e5b358', fontWeight: '600' }}
-                >
-                  <i className="fas fa-file-pdf" style={{ marginRight: '6px' }}></i> Download Catalogue (PDF)
-                </a>
-              </li>
             </ul>
           </div>
 
