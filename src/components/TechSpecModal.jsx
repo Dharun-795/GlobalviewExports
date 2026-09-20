@@ -65,25 +65,13 @@ export default function TechSpecModal({ product, onClose }) {
           </div>
         </div>
 
-        <div className="modal-footer" style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
-          <a 
-            href="/assets/Global_View_Exports_Product_Catalogue_2026.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            download="Global_View_Exports_Product_Catalogue_2026.pdf"
-            className="btn btn-outline-dark"
-            style={{ fontSize: '0.82rem' }}
-          >
-            <i className="fas fa-file-pdf"></i> Download Full Catalogue (PDF)
-          </a>
-          <div style={{ display: 'flex', gap: '0.5rem' }}>
-            <button className="btn btn-outline-dark" onClick={onClose}>
-              Close
-            </button>
-            <button className="btn btn-primary" onClick={handleInquire}>
-              Inquire About This Product
-            </button>
-          </div>
+        <div className="modal-footer">
+          <button className="btn btn-outline-dark" onClick={onClose}>
+            Close
+          </button>
+          <button className="btn btn-primary" onClick={handleInquire}>
+            Inquire About This Product
+          </button>
         </div>
       </div>
     </div>

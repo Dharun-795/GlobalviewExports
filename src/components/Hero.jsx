@@ -73,20 +73,15 @@ export default function Hero() {
 
       <div className="container hero-container-rel">
         <div className="hero-modern-content">
-          {/* Badge */}
-          <div className="badge-pill hero-badge">
-            <i className="fas fa-seedling"></i> PRODUCT CATALOGUE — 2026
-          </div>
-
           {/* Main Title */}
           <h1 className="hero-headline">
-            Sustainable growing solutions<br />
-            from nature.
+            Natural Growing Media.<br />
+            Global Supply.
           </h1>
 
           {/* Subheading */}
           <h2 className="hero-subheadline">
-            Coconut-based horticultural and agricultural products, sourced and prepared across Tamil Nadu's coir belt.
+            Premium Coco Peat &amp; Coir Substrates Direct from India
           </h2>
 
           {/* Description */}

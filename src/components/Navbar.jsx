@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 const navItems = [
   { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
+  { id: 'about', label: 'About Us' },
   { id: 'products', label: 'Products' },
-  { id: 'catalog', label: 'Catalogue' },
-  { id: 'specs', label: 'Specs' },
+  { id: 'specs', label: 'Low vs High EC' },
   { id: 'process', label: 'Process' },
-  { id: 'why-us', label: 'Why Us' },
   { id: 'logistics', label: 'Logistics' },
   { id: 'contact', label: 'Contact' },
 ];
