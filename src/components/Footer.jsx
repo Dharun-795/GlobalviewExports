@@ -1,9 +1,21 @@
 import React from 'react';
 
 export default function Footer() {
-  const scrollTo = (id) => {
+  const scrollTo = (id, path) => {
+    if (path && window.location.pathname !== path) {
+      window.history.pushState(null, '', path);
+    }
+    if (id === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) {
+      const navbar = document.querySelector('.navbar');
+      const offset = navbar ? navbar.offsetHeight + 10 : 80;
+      const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -23,25 +35,25 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Navigation</h4>
             <ul className="footer-links">
-              <li><a href="#home" onClick={(e) => { e.preventDefault(); scrollTo('home'); }}>Home</a></li>
-              <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollTo('about'); }}>About Company</a></li>
-              <li><a href="#products" onClick={(e) => { e.preventDefault(); scrollTo('products'); }}>Product Portfolio</a></li>
-              <li><a href="#specs" onClick={(e) => { e.preventDefault(); scrollTo('specs'); }}>Low vs High EC Guide</a></li>
-              <li><a href="#process" onClick={(e) => { e.preventDefault(); scrollTo('process'); }}>Quality & Process</a></li>
-              <li><a href="#quote" onClick={(e) => { e.preventDefault(); scrollTo('quote'); }}>Request Quote</a></li>
+              <li><a href="/" onClick={(e) => { e.preventDefault(); scrollTo('home', '/'); }}>Home</a></li>
+              <li><a href="/about" onClick={(e) => { e.preventDefault(); scrollTo('about', '/about'); }}>About Company</a></li>
+              <li><a href="/products" onClick={(e) => { e.preventDefault(); scrollTo('products', '/products'); }}>Product Portfolio</a></li>
+              <li><a href="/specs" onClick={(e) => { e.preventDefault(); scrollTo('specs', '/specs'); }}>Low vs High EC Guide</a></li>
+              <li><a href="/process" onClick={(e) => { e.preventDefault(); scrollTo('process', '/process'); }}>Quality & Process</a></li>
+              <li><a href="/quote" onClick={(e) => { e.preventDefault(); scrollTo('quote', '/quote'); }}>Request Quote</a></li>
             </ul>
           </div>
 
           <div className="footer-col">
             <h4>Export Products</h4>
             <ul className="footer-links">
-              <li><a href="#products" onClick={(e) => { e.preventDefault(); scrollTo('products'); }}>5 Kg Low EC Blocks</a></li>
-              <li><a href="#products" onClick={(e) => { e.preventDefault(); scrollTo('products'); }}>5 Kg High EC Animal Bedding</a></li>
-              <li><a href="#products" onClick={(e) => { e.preventDefault(); scrollTo('products'); }}>Hydroponic Grow Bags</a></li>
-              <li><a href="#products" onClick={(e) => { e.preventDefault(); scrollTo('products'); }}>650g Retail Briquettes</a></li>
-              <li><a href="#products" onClick={(e) => { e.preventDefault(); scrollTo('products'); }}>Propagation Coins & Discs</a></li>
-              <li><a href="#products" onClick={(e) => { e.preventDefault(); scrollTo('products'); }}>Graded Coir Husk Chips</a></li>
-              <li><a href="#products" onClick={(e) => { e.preventDefault(); scrollTo('products'); }}>Natural Coir Fiber Bales</a></li>
+              <li><a href="/products" onClick={(e) => { e.preventDefault(); scrollTo('products', '/products'); }}>5 Kg Low EC Blocks</a></li>
+              <li><a href="/products" onClick={(e) => { e.preventDefault(); scrollTo('products', '/products'); }}>5 Kg High EC Animal Bedding</a></li>
+              <li><a href="/products" onClick={(e) => { e.preventDefault(); scrollTo('products', '/products'); }}>Hydroponic Grow Bags</a></li>
+              <li><a href="/products" onClick={(e) => { e.preventDefault(); scrollTo('products', '/products'); }}>650g Retail Briquettes</a></li>
+              <li><a href="/products" onClick={(e) => { e.preventDefault(); scrollTo('products', '/products'); }}>Propagation Coins & Discs</a></li>
+              <li><a href="/products" onClick={(e) => { e.preventDefault(); scrollTo('products', '/products'); }}>Graded Coir Husk Chips</a></li>
+              <li><a href="/products" onClick={(e) => { e.preventDefault(); scrollTo('products', '/products'); }}>Natural Coir Fiber Bales</a></li>
             </ul>
           </div>
 

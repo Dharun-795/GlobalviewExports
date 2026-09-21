@@ -1,6 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Primary Target Domain: globalviewexport.in -->
+  <url>
+    <loc>https://globalviewexport.in/</loc>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://globalviewexport.in/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalviewexports.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://globalviewexport.in/" />
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://globalviewexport.in/products</loc>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://globalviewexport.in/products" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalviewexports.com/products" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://globalviewexport.in/products" />
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://globalviewexport.in/specs</loc>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://globalviewexport.in/specs" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalviewexports.com/specs" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://globalviewexport.in/specs" />
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://globalviewexport.in/about</loc>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://globalviewexport.in/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalviewexports.com/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://globalviewexport.in/about" />
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://globalviewexport.in/process</loc>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://globalviewexport.in/process" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalviewexports.com/process" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://globalviewexport.in/process" />
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://globalviewexport.in/logistics</loc>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://globalviewexport.in/logistics" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalviewexports.com/logistics" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://globalviewexport.in/logistics" />
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://globalviewexport.in/quote</loc>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://globalviewexport.in/quote" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalviewexports.com/quote" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://globalviewexport.in/quote" />
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://globalviewexport.in/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://globalviewexport.in/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalviewexports.com/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://globalviewexport.in/contact" />
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- International Mirror: globalviewexports.com -->
   <url>
     <loc>https://globalviewexports.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalviewexports.com/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://globalviewexport.in/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://globalviewexport.in/" />
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://globalviewexports.com/products</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalviewexports.com/products" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://globalviewexport.in/products" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://globalviewexport.in/products" />
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://globalviewexports.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://globalviewexports.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://globalviewexport.in/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://globalviewexport.in/contact" />
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

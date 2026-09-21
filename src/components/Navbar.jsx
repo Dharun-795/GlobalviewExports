@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
 const navItems = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About Us' },
-  { id: 'products', label: 'Products' },
-  { id: 'specs', label: 'Low vs High EC' },
-  { id: 'process', label: 'Process' },
-  { id: 'logistics', label: 'Logistics' },
-  { id: 'contact', label: 'Contact' },
+  { id: 'home', path: '/', label: 'Home' },
+  { id: 'about', path: '/about', label: 'About Us' },
+  { id: 'products', path: '/products', label: 'Products' },
+  { id: 'specs', path: '/specs', label: 'Low vs High EC' },
+  { id: 'process', path: '/process', label: 'Process' },
+  { id: 'logistics', path: '/logistics', label: 'Logistics' },
+  { id: 'contact', path: '/contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
@@ -61,11 +61,21 @@ export default function Navbar() {
     };
   }, []);
 
-  const handleNavClick = (id) => {
+  const handleNavClick = (id, path) => {
     setMobileOpen(false);
+    if (path && window.location.pathname !== path) {
+      window.history.pushState(null, '', path);
+    }
+    if (id === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const navbar = document.querySelector('.navbar');
+      const offset = navbar ? navbar.offsetHeight + 10 : 80;
+      const top = element.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
   };
 
@@ -73,10 +83,10 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container">
         <a 
-          href="#home" 
+          href="/" 
           className="brand-logo" 
           aria-label="Global View Exports"
-          onClick={(e) => { e.preventDefault(); handleNavClick('home'); }}
+          onClick={(e) => { e.preventDefault(); handleNavClick('home', '/'); }}
         >
           <img className="logo-symbol" src="/assets/images/logo-flower.png" alt="Global View Exports Flower Icon" />
           <img className="logo-text-img" src="/assets/images/logo-text.png" alt="Global View Exports" />
@@ -87,11 +97,11 @@ export default function Navbar() {
             {navItems.map((item) => (
               <li key={item.id}>
                 <a
-                  href={`#${item.id}`}
+                  href={item.path}
                   className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNavClick(item.id);
+                    handleNavClick(item.id, item.path);
                   }}
                 >
                   {item.label}
@@ -100,9 +110,9 @@ export default function Navbar() {
             ))}
             <li className="mobile-menu-cta">
               <a 
-                href="#quote" 
+                href="/quote" 
                 className="btn btn-primary"
-                onClick={(e) => { e.preventDefault(); handleNavClick('quote'); }}
+                onClick={(e) => { e.preventDefault(); handleNavClick('quote', '/quote'); }}
               >
                 Request Quote
               </a>
@@ -112,9 +122,9 @@ export default function Navbar() {
 
         <div className="nav-cta-desktop">
           <a 
-            href="#quote" 
+            href="/quote" 
             className="btn btn-primary"
-            onClick={(e) => { e.preventDefault(); handleNavClick('quote'); }}
+            onClick={(e) => { e.preventDefault(); handleNavClick('quote', '/quote'); }}
           >
             Request Quote
           </a>
@@ -131,3 +141,4 @@ export default function Navbar() {
     </header>
   );
 }
+
