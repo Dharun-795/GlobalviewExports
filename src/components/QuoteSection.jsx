@@ -26,30 +26,13 @@ export default function QuoteSection() {
     setStatus({ state: 'submitting', message: 'Sending export inquiry directly to enquiry@globalviewexports.com...' });
 
     try {
-      const payload = {
-        _subject: `New Export Quotation Request: ${formData.inquiryProduct} - ${formData.buyerCompany || formData.buyerName}`,
-        _template: 'table',
-        _captcha: 'false',
-        _replyto: formData.buyerEmail,
-        'Buyer Name': formData.buyerName,
-        'Company Name': formData.buyerCompany || 'Not Specified',
-        'Email Address': formData.buyerEmail,
-        'Phone / WhatsApp': formData.buyerPhone,
-        'Product of Interest': formData.inquiryProduct,
-        'EC Grade': formData.inquiryGrade,
-        'Estimated Volume': formData.inquiryQuantity,
-        'Packaging Required': formData.inquiryPackaging,
-        'Destination Sea Port': formData.inquiryPort || 'Not Specified',
-        'Additional Specifications': formData.buyerMessage || 'Standard Export Quality Order'
-      };
-
-      const response = await fetch('https://formsubmit.co/ajax/enquiry@globalviewexports.com', {
+      const response = await fetch('https://globalview-form-service.vdharun795.workers.dev', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(formData)
       });
 
       const respData = await response.json().catch(() => null);
