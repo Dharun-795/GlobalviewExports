@@ -25,30 +25,12 @@ export default function QuoteSection() {
     e.preventDefault();
     setStatus({ state: 'submitting', message: 'Sending export inquiry directly to enquiry@globalviewexports.com...' });
 
-    const payload = {
-      _subject: `Export Inquiry: ${formData.inquiryProduct} - ${formData.buyerCompany}`,
-      _template: 'table',
-      _replyto: formData.buyerEmail,
-      _cc: 'enquiry@globalviewexports.in',
-      'Buyer Name': formData.buyerName,
-      'Company Name': formData.buyerCompany,
-      'Email Address': formData.buyerEmail,
-      'Phone / WhatsApp': formData.buyerPhone,
-      'Product of Interest': formData.inquiryProduct,
-      'EC Grade': formData.inquiryGrade,
-      'Estimated Volume': formData.inquiryQuantity,
-      'Packaging Required': formData.inquiryPackaging,
-      'Destination Sea Port': formData.inquiryPort,
-      'Additional Specifications': formData.buyerMessage || 'Standard Export Quality'
-    };
-
     try {
       const formPayload = {
         _subject: `New Export Quotation Request: ${formData.inquiryProduct} - ${formData.buyerCompany || formData.buyerName}`,
         _template: 'table',
         _captcha: 'false',
         _replyto: formData.buyerEmail,
-        _cc: 'enquiry@globalviewexports.in',
         'Buyer Name': formData.buyerName,
         'Company Name': formData.buyerCompany || 'Not Specified',
         'Email Address': formData.buyerEmail,
