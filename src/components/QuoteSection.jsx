@@ -43,18 +43,18 @@ export default function QuoteSection() {
         'Additional Specifications': formData.buyerMessage || 'Standard Export Quality Order'
       };
 
-      const response = await fetch('https://formsubmit.co/ajax/enquiry@globalviewexports.com', {
+      const response = await fetch('/api/inquiry', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify(formPayload)
+        body: JSON.stringify(formData)
       });
 
       const respData = await response.json().catch(() => null);
 
-      if (response.ok && (!respData || respData.success === 'true' || respData.success === true)) {
+      if (response.ok && (!respData || respData.success === true || respData.success === 'true')) {
         setStatus({
           state: 'success',
           message: `Thank you, ${formData.buyerName}! Your export quotation request has been sent to enquiry@globalviewexports.com. Our commercial team will respond to ${formData.buyerEmail} with pricing shortly.`
@@ -71,13 +71,8 @@ export default function QuoteSection() {
           inquiryPort: '',
           buyerMessage: ''
         });
-      } else if (respData && respData.message && respData.message.toLowerCase().includes('activation')) {
-        setStatus({
-          state: 'activation_needed',
-          message: "FormSubmit has sent an activation email to enquiry@globalviewexports.com. Please open enquiry@globalviewexports.com and click 'Activate Form' once."
-        });
       } else {
-        throw new Error('Direct submission unsuccessful');
+        throw new Error((respData && respData.error) || 'Submission failed');
       }
     } catch (err) {
       // Direct mailto fallback

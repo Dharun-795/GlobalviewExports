@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "globalviewexports",
+  "compatibility_date": "2026-09-21",
+  "send_email": [
+    {
+      "name": "SEND_EMAIL",
+      "allowed_destination_addresses": ["enquiry@globalviewexports.com"]
+    }
+  ],
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
