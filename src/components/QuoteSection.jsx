@@ -26,7 +26,7 @@ export default function QuoteSection() {
     setStatus({ state: 'submitting', message: 'Sending export inquiry directly to enquiry@globalviewexports.com...' });
 
     try {
-      const formPayload = {
+      const payload = {
         _subject: `New Export Quotation Request: ${formData.inquiryProduct} - ${formData.buyerCompany || formData.buyerName}`,
         _template: 'table',
         _captcha: 'false',
@@ -43,13 +43,13 @@ export default function QuoteSection() {
         'Additional Specifications': formData.buyerMessage || 'Standard Export Quality Order'
       };
 
-      const response = await fetch('/api/inquiry', {
+      const response = await fetch('https://formsubmit.co/ajax/enquiry@globalviewexports.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
       });
 
       const respData = await response.json().catch(() => null);
@@ -72,26 +72,12 @@ export default function QuoteSection() {
           buyerMessage: ''
         });
       } else {
-        throw new Error((respData && respData.error) || 'Submission failed');
+        throw new Error((respData && respData.error) || 'Submission unsuccessful');
       }
     } catch (err) {
-      // Direct mailto fallback
-      const mailtoSubject = encodeURIComponent(`Export Inquiry: ${formData.inquiryProduct} - ${formData.buyerCompany || formData.buyerName}`);
-      const mailtoBody = encodeURIComponent(`Buyer Name: ${formData.buyerName}
-Company: ${formData.buyerCompany}
-Email: ${formData.buyerEmail}
-Phone: ${formData.buyerPhone}
-Product: ${formData.inquiryProduct}
-Grade: ${formData.inquiryGrade}
-Quantity: ${formData.inquiryQuantity}
-Packaging: ${formData.inquiryPackaging}
-Destination Port: ${formData.inquiryPort}
-Message: ${formData.buyerMessage}`);
-
-      window.location.href = `mailto:enquiry@globalviewexports.com?subject=${mailtoSubject}&body=${mailtoBody}`;
       setStatus({
-        state: 'success',
-        message: `Your default email application has opened to send your inquiry directly to enquiry@globalviewexports.com.`
+        state: 'error',
+        message: 'Could not send inquiry automatically. Please try again or reach out directly to info@globalviewexports.com or +91 98427 83222.'
       });
     }
   };
@@ -125,20 +111,20 @@ Message: ${formData.buyerMessage}`);
               </div>
             )}
 
-            {status.state === 'activation_needed' && (
-              <div className="status-success-card status-activation">
-                <div className="status-icon-wrap activation-icon">
-                  <i className="fas fa-envelope-open-text"></i>
+            {status.state === 'error' && (
+              <div className="status-success-card" style={{ background: '#fef2f2', borderColor: '#fca5a5' }}>
+                <div className="status-icon-wrap" style={{ background: '#fee2e2', color: '#dc2626' }}>
+                  <i className="fas fa-exclamation-circle"></i>
                 </div>
                 <div className="status-content-wrap">
-                  <h4 className="status-title">Action Required: Activate Email Gateway</h4>
-                  <p className="status-desc">{status.message}</p>
+                  <h4 className="status-title" style={{ color: '#991b1b' }}>Submission Error</h4>
+                  <p className="status-desc" style={{ color: '#7f1d1d' }}>{status.message}</p>
                   <button
                     type="button"
                     onClick={() => setStatus({ state: 'idle', message: '' })}
                     className="btn-status-reset"
                   >
-                    Dismiss
+                    Try Again
                   </button>
                 </div>
               </div>
